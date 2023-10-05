@@ -1,28 +1,57 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-void main(){
-  runApp(
-    MaterialApp(
 
-      home: Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          backgroundColor: Colors.green,
-          leading: Icon(Icons.add_business),
-          title:Center(
-          child:Text("Home"),
-          ),
-          actions: [IconButton(onPressed: (){},icon: Icon(Icons.search))],
-        ),
-        body: Center(
-          child: Text('This is mod 5 Assignment',style: TextStyle(
-            color: Colors.black,
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),),
+void main() {
+  runApp(const MyApp());
+}
 
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+          primarySwatch: Colors.blue
+      ),
+      home: const HomePage(),
+    );
+  }
+}
+
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Profile"),
+        centerTitle: true,
+      ),
+      body: const SizedBox(
+        height: double.infinity,
+        width: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.account_circle_rounded,
+              size: 50,
+              color: Colors.green,
+            ),
+            Text(
+              "Dibrata Nath",
+              style: TextStyle(color: Colors.green, fontSize: 24),
+            ),
+            Text(
+              "Flutter Batch 4",
+              style: TextStyle(color: Colors.lightBlue, fontSize: 20),
+            ),
+          ],
         ),
       ),
-    )
-  );
+    );
+  }
 }
